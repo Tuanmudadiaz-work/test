@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cara Baca Ajaib – Anemone Indonesia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFF9F2;
+    --cream-deep:#FCF1DE;
+    --teal:#0C373D;
+    --teal-soft:#154853;
+    --pink:#E0176B;
+    --pink-deep:#B91257;
+    --orange:#F2A93B;
+    --green:#3C9F5C;
+    --ink:#1E2B29;
+    --ink-soft:#4B5B58;
+    --white:#FFFFFF;
+    --radius-lg:28px;
+    --radius-md:18px;
+    --radius-sm:12px;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+ body{
+  font-family:-apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  }
+h1,h2,h3,h4{
+  font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+  line-height:1.15;
+  color:var(--teal);
+  }
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  img,.ph{display:block;width:100%;height:auto;border-radius:var(--radius-md);}
+  ul{list-style:none;}
+
+  /* Placeholder photo blocks */
+  .ph{
+    aspect-ratio:4/3;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,#FDEBD3,#FBD9E8);
+    color:var(--teal-soft);
+    text-align:center;
+    padding:18px;
+    font-size:14px;
+    gap:6px;
+  }
+  .ph .emoji{font-size:80px;}
+  .ph small{font-size:12px;color:var(--ink-soft);}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+    font-weight:600;
+    font-size:18px;
+    padding:16px 32px;
+    border-radius:999px;
+    background:var(--pink);
+    color:var(--white);
+    box-shadow:0 8px 24px rgba(224,23,107,0.28);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(224,23,107,0.35);}
+  .btn.secondary{
+    background:var(--white);
+    color:var(--pink);
+    border:2px solid var(--pink);
+    box-shadow:none;
+  }
+  .btn.on-dark{background:var(--pink);}
+
+  .tag{
+    display:inline-block;
+    font-size:14px;
+    font-weight:600;
+    color:var(--pink-deep);
+    background:var(--white);
+    border:1.5px solid #F7C9DD;
+    padding:6px 16px;
+    border-radius:999px;
+    margin-bottom:18px;
+  }
+
+  section{padding:76px 0;}
+  @media(max-width:640px){section{padding:52px 0;}}
+
+  /* HERO */
+  .hero{
+    background:radial-gradient(circle at 15% 0%, #FDEFE0 0%, var(--cream) 55%);
+    padding-top:56px;
+  }
+  .hero .inner{text-align:center;max-width:760px;margin:0 auto;}
+  .hero h1{font-size:44px;margin-bottom:18px;}
+  .hero .sub{font-size:19px;color:var(--ink-soft);margin-bottom:14px;}
+  .hero .diff{font-size:16px;color:var(--ink-soft);max-width:600px;margin:0 auto 34px;}
+  .hero .hero-img{max-width:560px;margin:0 auto 34px;}
+  .trust-row{
+    display:flex;flex-wrap:wrap;gap:22px;justify-content:center;margin-top:36px;
+  }
+  .trust-row .item{
+    display:flex;align-items:center;gap:8px;
+    font-size:14.5px;font-weight:600;color:var(--teal);
+  }
+  .trust-row .dot{width:8px;height:8px;border-radius:50%;background:var(--green);}
+
+  @media(max-width:640px){
+    .hero h1{font-size:30px;}
+    .hero .sub{font-size:16.5px;}
+  }
+
+  /* PROBLEM */
+  .problem h2{font-size:32px;text-align:center;margin-bottom:8px;}
+  .problem .lede{text-align:center;color:var(--ink-soft);max-width:520px;margin:0 auto 44px;}
+  .card-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:20px;
+  }
+  @media(max-width:640px){.card-grid{grid-template-columns:1fr;}}
+  .pain-card{
+    background:var(--white);
+    border-radius:var(--radius-md);
+    padding:26px;
+    border:1.5px solid #F1E4D2;
+  }
+  .pain-card .emoji{font-size:30px;margin-bottom:12px;display:block;}
+  .pain-card h3{font-size:19px;margin-bottom:8px;}
+  .pain-card p{color:var(--ink-soft);font-size:15px;}
+  .center-cta{text-align:center;margin-top:44px;}
+
+  /* SOLUTION */
+  .solution{background:var(--teal);color:var(--white);}
+  .solution h2{color:var(--white);font-size:32px;text-align:center;margin-bottom:52px;max-width:640px;margin-left:auto;margin-right:auto;}
+  .sol-row{
+    display:grid;grid-template-columns:220px 1fr;gap:28px;align-items:center;
+    margin-bottom:46px;
+  }
+  .sol-row:last-child{margin-bottom:0;}
+  .sol-row .ph{aspect-ratio:1/1;}
+  .sol-row h3{color:var(--white);font-size:21px;margin-bottom:8px;}
+  .sol-row p{color:#CFE0DD;font-size:15px;}
+  @media(max-width:640px){
+    .sol-row{grid-template-columns:1fr;text-align:center;}
+    .sol-row .ph{max-width:200px;margin:0 auto;}
+  }
+
+  /* PROOF GALLERY */
+  .proof h2{font-size:32px;text-align:center;margin-bottom:10px;}
+  .proof .lede{text-align:center;color:var(--ink-soft);max-width:540px;margin:0 auto 44px;}
+  .gallery{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  }
+  @media(max-width:800px){.gallery{grid-template-columns:repeat(2,1fr);}}
+  .gallery figcaption{font-size:13px;margin-top:8px;color:var(--ink-soft);text-align:center;}
+
+  /* TESTIMONIAL */
+  .testi h2{font-size:32px;text-align:center;max-width:640px;margin:0 auto 44px;}
+  .testi-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;}
+  @media(max-width:800px){.testi-grid{grid-template-columns:1fr;}}
+  .testi-card{
+    background:var(--white);
+    border-left:4px solid var(--pink);
+    border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+    padding:22px 24px;
+  }
+  .testi-card p{font-size:15px;color:var(--ink);margin-bottom:14px;}
+  .testi-card cite{font-style:normal;font-size:13.5px;color:var(--ink-soft);font-weight:600;}
+
+  /* OFFER */
+  .offer{background:var(--teal);color:var(--white);}
+  .offer .inner{max-width:640px;margin:0 auto;text-align:center;}
+  .offer h2{color:var(--white);font-size:32px;margin-bottom:12px;}
+  .offer p.lede{color:#CFE0DD;margin-bottom:28px;}
+  .price-block{margin:8px 0 30px;}
+  .price-block .label{font-size:14px;color:#CFE0DD;margin-bottom:4px;}
+  .price-block .num{font-family:'Baloo 2',sans-serif;font-size:42px;font-weight:700;color:var(--orange);}
+  .price-block .num span{font-size:18px;font-weight:600;color:#CFE0DD;}
+  .bonus-stack{
+    display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:14px;text-align:left;
+  }
+  @media(max-width:560px){.bonus-stack{grid-template-columns:1fr;}}
+  .bonus-item{
+    background:var(--teal-soft);
+    border-radius:var(--radius-sm);
+    padding:18px;
+  }
+  .bonus-item .emoji{font-size:24px;margin-bottom:6px;display:block;}
+  .bonus-item p{font-size:14px;color:#CFE0DD;}
+  .bonus-item strong{color:var(--white);}
+  .total-bonus{
+    font-family:'Baloo 2',sans-serif;font-size:20px;font-weight:700;color:var(--white);
+    background:var(--pink);display:inline-block;padding:10px 22px;border-radius:999px;margin-bottom:30px;
+  }
+  .urgency-box{
+    margin-top:40px;background:var(--teal-soft);border:1.5px solid rgba(255,255,255,0.15);
+    border-radius:var(--radius-md);padding:24px;
+  }
+  .urgency-box h3{color:var(--white);font-size:19px;margin-bottom:8px;}
+  .urgency-box p{color:#CFE0DD;font-size:14.5px;margin-bottom:18px;}
+
+  /* DISCLAIMER */
+  .disclaimer .box{
+    background:var(--cream-deep);
+    border-radius:var(--radius-md);
+    padding:30px 32px;
+  }
+  .disclaimer h3{font-size:20px;margin-bottom:16px;}
+  .disclaimer li{
+    display:flex;gap:10px;font-size:14.5px;color:var(--ink-soft);margin-bottom:10px;
+  }
+  .disclaimer li .ic{flex-shrink:0;}
+
+  /* FAQ */
+  .faq h2{font-size:32px;text-align:center;margin-bottom:40px;}
+  .faq-list{max-width:680px;margin:0 auto;}
+  details{
+    background:var(--white);border:1.5px solid #F1E4D2;border-radius:var(--radius-sm);
+    padding:18px 22px;margin-bottom:12px;
+  }
+  summary{
+    font-family:'Baloo 2',sans-serif;font-weight:600;font-size:16.5px;cursor:pointer;
+    color:var(--teal);list-style:none;display:flex;justify-content:space-between;align-items:center;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+";font-size:20px;color:var(--pink);margin-left:12px;}
+  details[open] summary::after{content:"–";}
+  details p{margin-top:12px;font-size:14.5px;color:var(--ink-soft);}
+
+  /* FOOTER */
+  footer{background:var(--ink);color:#B9C4C1;padding:40px 0;text-align:center;font-size:13.5px;}
+  .social-proof{
+    background:var(--white);color:var(--ink);
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 18px;border-radius:999px;font-size:13.5px;margin-bottom:18px;
+  }
+  .social-proof .dot{width:8px;height:8px;background:var(--green);border-radius:50%;}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap inner">
+    <span class="tag">Dipercaya 200.000++ orang tua di seluruh Indonesia</span>
+    <h1>Bantu anak lancar membaca tanpa mengeja, hanya dalam waktu 1 jam
+    </h1>
+    <p class="sub">Cukup 1 jam trial, Bunda bisa langsung lihat progresnya. Bukan janji marketing, ini <B>BUKTI NYATA.</B></p>
+    <p class="diff">Bukan sekadar "ba-bi-bu-be-bo", tapi sistem belajar semi privat 14 level yang sudah terbukti di 320+ outlet se-Indonesia.</p>
+    <div class="hero-img ph">
+      <span class="emoji">📖</span>
+      <span>Foto: anak & guru saat sesi belajar</span>
+  </div>
+    <a href="#offer" class="btn">COBA GRATIS SEKARANG!</a>
+  <div style="display:flex; flex-wrap:wrap; gap:22px; justify-content:center; margin-top:36px;">
+  <div style="display:flex; align-items:center; gap:8px; margin:0; padding:0; font-size:14.5px; font-weight:600; color:#0C373D;">
+    <span style="width:8px; height:8px; border-radius:50%; background:#3C9F5C; display:inline-block; flex-shrink:0; margin:0;"></span>
+    200.000++ anak sudah lancar membaca
+  </div>
+  <div style="display:flex; align-items:center; gap:8px; margin:0; padding:0; font-size:14.5px; font-weight:600; color:#0C373D;">
+    <span style="width:8px; height:8px; border-radius:50%; background:#3C9F5C; display:inline-block; flex-shrink:0; margin:0;"></span>
+    100% uang kembali tanpa syarat
+  </div>
+  <div style="display:flex; align-items:center; gap:8px; margin:0; padding:0; font-size:14.5px; font-weight:600; color:#0C373D;">
+    <span style="width:8px; height:8px; border-radius:50%; background:#3C9F5C; display:inline-block; flex-shrink:0; margin:0;"></span>
+    Semi privat, 1 guru maks 3 anak
+  </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="wrap">
+    <h2>Bunda, apa si kecil masih ngalamin ini?</h2>
+    <p class="lede">Sebelum Bunda overthinking dan cemas karena progess membaca sikecil tidak membaik</p>
+    <div class="card-grid">
+      <div class="pain-card">
+        <span class="emoji">😟</span>
+        <h3>Sudah Mau SD, tapi belum lancar membaca</h3>
+        <p>Umur sudah masuk SD, tapi masih terjebak di fase mengeja huruf satu-satu.</p>
+      </div>
+      <div class="pain-card">
+        <span class="emoji">😢</span>
+        <h3>Takut anak kena bully di sekolah</h3>
+        <p>Anak yang belum bisa baca sering dipermalukan teman dan jadi minder duluan.</p>
+      </div>
+      <div class="pain-card">
+        <span class="emoji">🐢</span>
+        <h3>Sudah les berbulan-bulan, tanpa progres, anak makin stress</h3>
+        <p>Sudah keluar biaya dan waktu, tapi kemampuan bacanya tidak berkembang.</p>
+      </div>
+      <div class="pain-card">
+        <span class="emoji">😰</span>
+        <h3>Khawatir rasa percaya diri anak makin turun</h3>
+        <p>Takut cara belajar yang salah malah bikin anak makin minder dan malas belajar.</p>
+      </div>
+    </div>
+    <div class="center-cta">
+      <a href="#offer" class="btn secondary">SAYA MAU ANAK SAYA CEPAT BISA BACA</a>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="solution">
+  <div class="wrap">
+    <h2>Kenapa di Anemone anak bisa lancar membaca cuma dalam 1 jam</h2>
+
+    <div class="sol-row">
+      <div class="ph"><span class="emoji">🔤</span><small>Logo Cara Baca Ajaib Anemone</small></div>
+      <div>
+        <h3>Langsung kenalan suku kata, bukan mengeja huruf</h3>
+        <p>Anak langsung belajar mengenali bunyi suku kata, bukan mengeja satu huruf demi huruf. Lebih Efetif dan Efisien untuk anak.</p>
+      </div>
+    </div>
+
+    <div class="sol-row">
+      <div class="ph"><span class="emoji">📚</span><small>Roadmap 14 level</small></div>
+      <div>
+        <h3>14 level belajar yang tersusun sistematis</h3>
+        <p>Materi berjenjang dari yang termudah sampai paling kompleks. Anak terus merasa berhasil di tiap level, jadi makin semangat lanjut ke level berikutnya.</p>
+      </div>
+    </div>
+
+    <div class="sol-row">
+      <div class="ph"><span class="emoji">🧑‍🏫</span><small>Sesi semi privat</small></div>
+      <div>
+        <h3>Semi privat 1 guru, maksimal 3 anak</h3>
+        <p>Bukan kelas rame-rame. Guru bisa fokus mengoreksi progres tiap anak secara personal, ditemani guru-guru yang happy dan ceria.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF GALLERY -->
+<section class="proof">
+  <div class="wrap">
+    <h2>Ini Testimoni Langsung dari Orang Tua</h2>
+    <p class="lede">Testimoni langsung dari Orang Tua yang sudah merasakan magic dari Cara Baca Ajaib Anemone</p>
+    <div class="gallery">
+      <figure>
+        <div class="ph"><span class="emoji">🧒</span></div>
+        <figcaption>Gek Pradnya — Anemone Sesetan Denpasar</figcaption>
+      </figure>
+      <figure>
+        <div class="ph"><span class="emoji">👦</span></div>
+        <figcaption>Darrel — Anemone Sesetan Denpasar</figcaption>
+      </figure>
+      <figure>
+        <div class="ph"><span class="emoji">👧</span></div>
+        <figcaption>Cyril — Anemone Komodo Denpasar</figcaption>
+      </figure>
+      <figure>
+        <div class="ph"><span class="emoji">🧒</span></div>
+        <figcaption>Dewa Gede — TK B, Anemone Sesetan Denpasar</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testi">
+  <div class="wrap">
+    <h2>Awalnya mereka kira bohongan, akhirnya yakin ini <B>NYATA</B></h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p>"Kayak seperti di-ketok magic ya. Moza yang sudah les berbulan-bulan di gurunya tidak ada perkembangan, hanya 2 bulan les di Anemone sudah lancar bacanya."</p>
+        <cite>Orang tua Ni Putu Devi Shrimoza S., 5 tahun</cite>
+      </div>
+      <div class="testi-card">
+        <p>"Awalnya nggak percaya dengan moto cepat bisa baca, tapi saya kaget baru Free Trial 1 jam, kok anak ini udah bisa baca — padahal belum ada pertemuan, baru trial aja."</p>
+        <cite>Adi Wijaya, orang tua Aiko Alleta Wijaya, 6 tahun</cite>
+      </div>
+      <div class="testi-card">
+        <p>"Dean pernah ikut les di tempat lain, tapi 3 bulan tidak ada perkembangan. Setelah di Anemone, 1 jam setelah ikut les, Dean bisa mempraktikkan apa yang dipelajari."</p>
+        <cite>R. Bronia Lololuan, orang tua Dean Sari Lololuan, 5 tahun</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="offer" id="offer">
+  <div class="wrap inner">
+    <span class="tag" style="background:var(--teal-soft);color:var(--white);border-color:rgba(255,255,255,0.2);">Penawaran Khusus untuk yang daftar trial lewat halaman ini</span>
+    <h2>Coba gratis sampai anak bisa baca cerita pertamanya</h2>
+    <p class="lede"><b>Trial Gratis 1 Jam</b>, tanpa komitmen, tanpa risiko. Bunda bisa lihat langsung progresnya sebelum memutuskan lanjut.</p>
+
+    <div class="price-block">
+      <div class="label">Investasi setelah trial, Mulai dari</div>
+      <div class="num">Rp 300.000 <span>/ bulan</span></div>
+    </div>
+
+    <div class="bonus-stack">
+      <div class="bonus-item">
+        <span class="emoji">📘</span>
+        <p><strong>Modul Belajar Cara Baca Ajaib</strong><br>senilai Rp 200.000</p>
+      </div>
+      <div class="bonus-item">
+        <span class="emoji">🎒</span>
+        <p><strong>Tas Anemone untuk perlengkapan belajar</strong><br>senilai Rp 100.000</p>
+      </div>
+    </div>
+    <div class="total-bonus">Total bonus Rp 300.000</div>
+    <br>
+    <a href="#" class="btn on-dark"><B>KLAIM TRIAL GRATIS + BONUS SEKARANG</B></a>
+
+    <div class="urgency-box">
+      <h3>Kuota trial gratis terbatas tiap bulan!!</h3>
+      <p>Slot semi privat (1 guru : maks 3 anak) di tiap outlet terbatas. Amankan jadwal trial si kecil sebelum kuota bulan ini penuh.</p>
+      <a href="#" class="btn secondary" style="background:transparent;color:var(--white);border-color:rgba(255,255,255,0.4);">SAYA INGIN AMANKAN SLOT TRIAL</a>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section class="disclaimer">
+  <div class="wrap">
+    <div class="box">
+      <h3>Penting sebelum daftar</h3>
+      <ul>
+        <li><span class="ic">✅</span> Ini adalah program belajar tatap muka di outlet Anemone terdekat, bukan e-book atau produk digital.</li>
+        <li><span class="ic">✅</span> Trial gratis 1 jam, jadwal dikonfirmasi lewat WhatsApp admin.</li>
+        <li><span class="ic">🔒</span> 100% uang kembali tanpa syarat, tanpa ditanya, jika program tidak sesuai ekspektasi.</li>
+        <li><span class="ic">⚠️</span> Bonus modul belajar dan tas hanya berlaku untuk pendaftaran melalui halaman ini.</li>
+        <li><span class="ic">📍</span> Tersedia di 320+ outlet se-Indonesia — outlet terdekat dikonfirmasi saat chat WhatsApp.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap">
+    <h2>Pertanyaan yang sering diajukan</h2>
+    <div class="faq-list">
+      <details>
+        <summary>Anak saya belum hafal semua huruf, apakah bisa ikut?</summary>
+        <p>Bisa. Materi disusun bertahap dari level termudah, jadi anak tidak harus hafal semua huruf sejak awal.</p>
+      </details>
+      <details>
+        <summary>Anak saya sudah SD tapi masih belum lancar membaca, apakah masih bisa ikut?</summary>
+        <p>Bisa banget. Justru banyak murid Anemone yang mulai di usia SD dan tetap merasakan progres signifikan.</p>
+      </details>
+      <details>
+        <summary>Bagaimana kalau ternyata tidak ada progres seperti yang dijanjikan?</summary>
+        <p>Ada garansi 100% uang kembali tanpa syarat, tanpa ditanya — jadi risiko sepenuhnya ada di kami, bukan Bunda.</p>
+      </details>
+      <details>
+        <summary>Apakah kelasnya rame-rame seperti les pada umumnya?</summary>
+        <p>Tidak. Kelas semi privat, 1 guru mengajar maksimal 3 anak, jadi progres tiap anak benar-benar diperhatikan.</p>
+      </details>
+      <details>
+        <summary>Berapa biaya setelah trial gratis?</summary>
+        <p>Special price mulai dari Rp 300.000/bulan (Menyesuaikan Lokasi Outlet), dengan bonus modul belajar dan tas khusus pendaftar dari halaman ini.</p>
+      </details>
+      <details>
+        <summary>Dimana lokasi belajarnya?</summary>
+        <p>Tersebar di 320+ outlet se-Indonesia. Outlet terdekat akan dikonfirmasi saat Bunda chat via WhatsApp.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="social-proof"><span class="dot"></span>12 orang tua baru saja klaim trial gratis hari ini</div>
+    <p>&copy; 2026 Anemone Indonesia. All rights reserved.</p>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/twemoji.min.js"></script>
+<script>twemoji.parse(document.body);</script>
+</body>
+</html>
